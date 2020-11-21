@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
 *::before,
  ::after {
     box-sizing: border-box;
@@ -6,34 +7,57 @@
 body {
     margin: 0;
     padding: 0;
+    background: #ccc;
+    font-family: 'Open Sans', sans-serif;
 }
 
-img {
+.flag {
     max-width: 100%;
+    height: 100px;
 }
 
 .container {
-    width: 85%;
-    max-width: 800px;
+    width: 90%;
+    min-height: 100vh;
     margin: 0 auto;
+    max-width: 1200px;
 }
 
-.card {
-    background: hsl(210, 9%, 9%)0% 0% no-repeat padding-box;
+.countries {
+    /* width: 100%; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    margin-left: 1em;
+}
+
+li:first-child {
+    font-size: 1.3rem;
+}
+
+li {
+    padding: .5em 0;
+    color: #ffffff;
+    font-size: .9rem;
+}
+
+.country {
+    background: hsl(209, 23%, 22%) 0% 0% no-repeat padding-box;
     box-shadow: 10px 10px 20px #00000029;
-    margin-bottom: 10px;
+    padding-bottom: 1em;
 }
 
-.content {
-    /* height: 300px; */
-    max-width: 100%;
-    padding: 1em;
-    color: #fff;
-    margin-bottom: 10px;
-}
-
-@media(min-width:800px) {
-    .card {
-        /* display: flex; */
+@media (max-width:369px) {
+    .countries {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
